@@ -66,7 +66,8 @@ int main(int argc, char *arvg[])
         return -1;
     }
 
-    printf("\nCache Simulator CS 3853 Spring 2021- Group #18\n\n");
+    // this print was a project requirement; isn't necessary
+    //printf("\nCache Simulator CS 3853 Spring 2021- Group #18\n\n");
 
     printf("Trace File: %s\n", fileName);
 
@@ -121,6 +122,9 @@ int main(int argc, char *arvg[])
                                                                                     (((double)cache->numberOfBlocks-compulsory)*blockSize) / 1024 * 0.09);
     printf("Unused Cache Blocks: %d / %d\n", cache->numberOfBlocks-compulsory, cache->numberOfBlocks);
 
+
+// deprecated
+/*
     if (analysisMode == 1){
         char input[100];
         FILE *sheet;
@@ -184,7 +188,7 @@ int main(int argc, char *arvg[])
         fputs("\n", sheet);
         fclose(sheet);
     }
-
+*/
     free(cache);
     free(rows);
     printf("\n");
