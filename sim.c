@@ -136,12 +136,12 @@ int main(int argc, char *arvg[])
             fputs(input, sheet);
         }
         if (strcmp(analyzedInput, "b") == 0) {
-            if( access("Block Size Data.csv", F_OK ) != 0 ) {
-                sheet = fopen("Block Size Data.csv", "a");
+            if( access("Data.csv", F_OK ) != 0 ) {
+                sheet = fopen("Data.csv", "a");
                 fputs("Block Size (Bytes),Cache Hit Rate,Cache Miss Rate,CPI,Wasted Space,Waste in Dollars\n", sheet);
             }
             else {
-                sheet = fopen("Block Size Data.csv", "a");
+                sheet = fopen("Data.csv", "a");
             }
             sprintf(input, "%d,", (int)pow(2, cache->offsetSize));
             fputs(input, sheet);
