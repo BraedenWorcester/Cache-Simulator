@@ -234,10 +234,17 @@ int PopulateCache(Cache *cache){
 }
 
 Cache *BuildCache(){
+    
     int cacheBytes = cacheSize * 1024;
     if (cacheBytes != (int)pow(2, ceil(log(cacheBytes) / log(2)))){
         printf("warning: cache size not a power of 2, rounding up to %d KB\n", (int)pow(2, ceil(log(cacheBytes) / log(2))) / 1024);
         cacheBytes = (int)pow(2, ceil(log(cacheBytes) / log(2)));
+    }
+
+    if (ceil(log(cacheSize) / log(2)) - ceil(log(assoc) / log(2)) < 4){
+        assoc = (int)pow(2, ceil(log(cacheSize) / log(2)) - 4);
+        if (assoc < 1){ assoc = 1; }
+        printf("warning: associativity too high in relation to cache size, reducing to maximum safe size of %d\n", assoc);
     }
 
     Cache *cache = malloc(sizeof(Cache));
