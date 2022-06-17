@@ -1,6 +1,6 @@
 # Overview
 
-This is source code for a C program that reads memory accesses from a trace file before simulating the process of running those accesses against a cache, keeping track of the number of misses/hits as well the total cost and utilization.
+This is source code for a C program that reads memory accesses from a trace file before simulating the process of running those accesses against a cache in a system with a 32 bit databus, keeping track of the number of misses/hits as well the total cost and utilization.
 
 # Usage
 
