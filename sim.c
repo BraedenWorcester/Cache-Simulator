@@ -96,7 +96,7 @@ int main(int argc, char *arvg[])
     printf("Total # Rows: %d\n", cache->numberOfRows);
     printf("Overhead Size: %d bytes\n", cache->overheadSize);
     printf("Implementation Memory Size: %0.1lf KB\n", cache->implementationSize);
-    printf("Cost: $%0.2lf\n", cache->cost);
+    printf("Cost: $%0.2lf ($0.09 per KB)\n", cache->cost);
 
     int code = PopulateCache(cache);
     if (code != 0){
